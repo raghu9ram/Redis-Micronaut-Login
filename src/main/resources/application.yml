@@ -1,0 +1,26 @@
+micronaut:
+  application:
+    name: redisCached
+dataSource:
+  dbCreate: update
+  pooled: true
+  url: jdbc:postgresql://localhost:5432/postgres
+  driverClassName: org.postgresql.Driver
+  username: postgres
+  password: root
+  dialect: org.hibernate.dialect.PostgreSQLDialect
+  properties:
+    jmxEnabled: true
+    initialSize: 5
+redis:
+  uri: redis://localhost:6379
+  timeout: 5s
+  pool:
+    enabled: true
+    max-active: 10
+    max-idle: 5
+    min-idle: 1
+netty:
+  default:
+    allocator:
+      max-order: 3
